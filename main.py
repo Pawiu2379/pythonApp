@@ -2,10 +2,12 @@ import tkinter as tk
 
 window = tk.Tk()
 
-w = tk.Label(window,text='1')
-w.place(x=0,y=0)
-w = tk.Label(window,text='2')
-w.place(x=50,y=0)
-w = tk.Label(window,text='3')
-w.place(x=100,y=0)
+for x in range(3):
+    for y in range(3):
+        label = tk.Label(window,text=f"Row {x}\n Column {y}",relief=tk.SOLID,borderwidth=1)
+        label.grid(row=x,column=y)
+
+
+label = tk.Label(window,text="this is a span ",relief=tk.RAISED,borderwidth=1)
+label.grid(row=3,column=8,columnspan=3)
 window.mainloop()
